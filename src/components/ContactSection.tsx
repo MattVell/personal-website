@@ -15,6 +15,18 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const formattedMessage =
+      `*Olá Mateus! Tenho interesse em um projeto.*\n\n` +
+      `👤 *Nome:* ${formData.name}\n` +
+      `✉️ *E-mail:* ${formData.email}\n` +
+      `📁 *Tipo de Projeto:* ${formData.projectType}\n\n` +
+      `💬 *Detalhes do Projeto:*\n${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/5541992666567?text=${encodeURIComponent(formattedMessage)}`;
+
+    window.open(whatsappUrl, "_blank");
+
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);
@@ -23,7 +35,7 @@ export default function ContactSection() {
   };
 
   const whatsappMessage = encodeURIComponent(
-    "Olá Mateus! Vi seu repertório/portfólio online e gostaria de conversar sobre um novo projeto."
+    "Olá Mateus! Vi seu portfólio online e gostaria de conversar sobre um novo projeto."
   );
 
   return (
@@ -63,7 +75,7 @@ export default function ContactSection() {
               </div>
 
               <a
-                href={`https://wa.me/?text=${whatsappMessage}`}
+                href={`https://wa.me/5541992666567?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="neon-btn-primary w-full justify-center py-4 text-base font-bold shadow-lg"
@@ -94,7 +106,7 @@ export default function ContactSection() {
               </a>
 
               <a
-                href="mailto:contato@mateusveloso.dev"
+                href="mailto:mateusleitemazzardoveloso@gmail.com"
                 className="glass-card rounded-2xl p-4 border border-white/10 flex items-center justify-between hover:border-green-500/40 transition-colors group"
               >
                 <div className="flex items-center gap-3">
@@ -103,7 +115,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">E-mail Profissional</h4>
-                    <p className="text-xs text-gray-400 font-mono">contato@mateusveloso.dev</p>
+                    <p className="text-xs text-gray-400 font-mono">mateusleitemazzardoveloso@gmail.com</p>
                   </div>
                 </div>
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-green-400" />
