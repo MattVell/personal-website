@@ -32,9 +32,9 @@ export default function Hero() {
               <span className="text-white">&amp;&nbsp;</span>
               <span className="relative inline-block text-emerald-400">
                 design impecável.
-                {/* Wavy Underline in dark emerald with exact symmetrical gaps for 'g' & 'p' */}
+                {/* Wavy Underline in dark emerald with symmetrical circular cutouts for 'g' & 'p' */}
                 <svg
-                  className="absolute -bottom-3 sm:-bottom-3.5 left-0 w-full h-3.5 sm:h-4 text-[#065f46] overflow-visible pointer-events-none"
+                  className="absolute -bottom-2.5 sm:-bottom-3 left-0 w-full h-3.5 sm:h-4 text-[#065f46] overflow-visible pointer-events-none"
                   viewBox="0 0 300 16"
                   fill="none"
                   preserveAspectRatio="none"
@@ -44,13 +44,13 @@ export default function Hero() {
                     <mask id="wavy-underline-g-p-mask">
                       {/* Full white reveal rect with vertical padding */}
                       <rect x="0" y="-5" width="300" height="26" fill="white" />
-                      {/* Symmetrical cutout for 'g' descender: centered at X=74.5 (64.0 -> 85.0) */}
-                      <rect x="64" y="-5" width="21" height="26" fill="black" rx="2" />
-                      {/* Symmetrical cutout for 'p' descender: centered at X=169.5 (158.5 -> 180.5) */}
-                      <rect x="158.5" y="-5" width="22" height="26" fill="black" rx="2" />
+                      {/* Symmetrical smooth circular cutout for 'g' descender centered at X=77 */}
+                      <circle cx="77" cy="1" r="11.8" fill="black" />
+                      {/* Symmetrical smooth circular cutout for 'p' descender centered at X=169.5 */}
+                      <circle cx="169.5" cy="1" r="11" fill="black" />
                     </mask>
                   </defs>
-                  {/* Continuous mathematical sine wave path with full vertical clearance clipped by mask */}
+                  {/* Continuous mathematical sine wave path clipped by smooth circular contour mask */}
                   <path
                     d="M 0 8 C 2.7 3.5, 4.8 3.5, 7.5 8 C 10.2 12.5, 12.3 12.5, 15 8 C 17.7 3.5, 19.8 3.5, 22.5 8 C 25.2 12.5, 27.3 12.5, 30 8 C 32.7 3.5, 34.8 3.5, 37.5 8 C 40.2 12.5, 42.3 12.5, 45 8 C 47.7 3.5, 49.8 3.5, 52.5 8 C 55.2 12.5, 57.3 12.5, 60 8 C 62.7 3.5, 64.8 3.5, 67.5 8 C 70.2 12.5, 72.3 12.5, 75 8 C 77.7 3.5, 79.8 3.5, 82.5 8 C 85.2 12.5, 87.3 12.5, 90 8 C 92.7 3.5, 94.8 3.5, 97.5 8 C 100.2 12.5, 102.3 12.5, 105 8 C 107.7 3.5, 109.8 3.5, 112.5 8 C 115.2 12.5, 117.3 12.5, 120 8 C 122.7 3.5, 124.8 3.5, 127.5 8 C 130.2 12.5, 132.3 12.5, 135 8 C 137.7 3.5, 139.8 3.5, 142.5 8 C 145.2 12.5, 147.3 12.5, 150 8 C 152.7 3.5, 154.8 3.5, 157.5 8 C 160.2 12.5, 162.3 12.5, 165 8 C 167.7 3.5, 169.8 3.5, 172.5 8 C 175.2 12.5, 177.3 12.5, 180 8 C 182.7 3.5, 184.8 3.5, 187.5 8 C 190.2 12.5, 192.3 12.5, 195 8 C 197.7 3.5, 199.8 3.5, 202.5 8 C 205.2 12.5, 207.3 12.5, 210 8 C 212.7 3.5, 214.8 3.5, 217.5 8 C 220.2 12.5, 222.3 12.5, 225 8 C 227.7 3.5, 229.8 3.5, 232.5 8 C 235.2 12.5, 237.3 12.5, 240 8 C 242.7 3.5, 244.8 3.5, 247.5 8 C 250.2 12.5, 252.3 12.5, 255 8 C 257.7 3.5, 259.8 3.5, 262.5 8 C 265.2 12.5, 267.3 12.5, 270 8 C 272.7 3.5, 274.8 3.5, 277.5 8 C 280.2 12.5, 282.3 12.5, 285 8 C 287.7 3.5, 289.8 3.5, 292.5 8 C 295.2 12.5, 297.3 12.5, 300 8"
                     stroke="currentColor"
