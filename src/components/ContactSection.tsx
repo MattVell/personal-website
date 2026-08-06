@@ -207,7 +207,7 @@ export default function ContactSection() {
 
         {/* Footer */}
         <div className="pt-16 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-mono">
-          <div>
+          <div suppressHydrationWarning>
             © {new Date().getFullYear()} Mateus Veloso. Todos os direitos reservados.
           </div>
           <div className="flex items-center gap-6">

@@ -45,8 +45,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth dark`}>
-      <body className="bg-[#060709] text-gray-100 font-sans antialiased selection:bg-green-500/30 selection:text-white min-h-screen flex flex-col relative">
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${jetbrainsMono.variable} scroll-smooth dark`}
+      suppressHydrationWarning
+    >
+      <body
+        className="bg-[#060709] text-gray-100 font-sans antialiased selection:bg-green-500/30 selection:text-white min-h-screen flex flex-col relative"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
