@@ -351,6 +351,18 @@ USING (is_active = true);`,
     ? techList 
     : techList.filter((t) => t.category === activeCategory);
 
+  const handleTechSelect = (techId: string) => {
+    setSelectedTechId(techId);
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      setTimeout(() => {
+        const el = document.getElementById("tech-inspector-stage");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }, 50);
+    }
+  };
+
   return (
     <section id="tech-stack" className="relative py-28 px-6 sm:px-12 lg:px-20 z-10 overflow-hidden">
       
@@ -382,8 +394,8 @@ USING (is_active = true);`,
             </p>
           </div>
 
-          {/* Interactive Category Filter Bar */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-slate-950/80 border border-white/10 backdrop-blur-md">
+          {/* Interactive Category Filter Bar (Horizontal scroll on mobile) */}
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-slate-950/80 border border-white/10 backdrop-blur-md overflow-x-auto no-scrollbar max-w-full">
             {[
               { id: "all", label: "Todas" },
               { id: "frontend", label: "Frontend" },
@@ -394,7 +406,7 @@ USING (is_active = true);`,
               <button
                 key={tab.id}
                 onClick={() => setActiveCategory(tab.id as any)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono whitespace-nowrap transition-all duration-200 shrink-0 ${
                   activeCategory === tab.id
                     ? "bg-green-500/20 text-green-300 font-bold border border-green-500/40 shadow-sm"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
@@ -410,7 +422,7 @@ USING (is_active = true);`,
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Interactive Architecture Inspector Stage (7 Colunas) */}
-          <div className="lg:col-span-7 glass-card rounded-3xl border border-white/15 p-6 sm:p-8 space-y-8 relative overflow-hidden shadow-2xl backdrop-blur-xl">
+          <div id="tech-inspector-stage" className="lg:col-span-7 glass-card rounded-3xl border border-white/15 p-5 sm:p-8 space-y-6 sm:space-y-8 relative overflow-hidden shadow-2xl backdrop-blur-xl">
             
             {/* Top Technology Title & Logo Bar */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
@@ -553,8 +565,8 @@ USING (is_active = true);`,
                 return (
                   <button
                     key={tech.id}
-                    onClick={() => setSelectedTechId(tech.id)}
-                    className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between gap-3 group relative overflow-hidden ${
+                    onClick={() => handleTechSelect(tech.id)}
+                    className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between gap-3 group relative overflow-hidden min-h-[48px] active:scale-[0.99] ${
                       isSelected
                         ? "bg-slate-900/90 border-green-500/60 shadow-lg shadow-green-500/10 ring-1 ring-green-500/40"
                         : "bg-slate-950/40 border-white/10 hover:bg-slate-900/60 hover:border-white/20"

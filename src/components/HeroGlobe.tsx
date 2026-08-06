@@ -182,7 +182,7 @@ export default function HeroGlobe() {
     <div className="relative w-full max-w-[560px] mx-auto aspect-square flex items-center justify-center select-none">
       
       {/* Central Ambient Glow Backdrop */}
-      <div className="absolute inset-0 m-auto w-[420px] h-[420px] bg-emerald-500/20 rounded-full blur-[90px] pointer-events-none -z-10 animate-pulse" />
+      <div className="absolute inset-0 m-auto w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] bg-emerald-500/20 rounded-full blur-[70px] sm:blur-[90px] pointer-events-none -z-10 animate-pulse" />
 
       {/* Interactive 3D Wireframe Canvas */}
       <canvas
@@ -191,7 +191,7 @@ export default function HeroGlobe() {
         style={{ width: "100%", height: "100%" }}
       />
 
-      {/* Floating Glassmorphism Cards (Matching User Mockup) */}
+      {/* Floating Glassmorphism Cards */}
 
       {/* Card 1: Top-Left Available for Hire Card */}
       <motion.div
@@ -201,21 +201,21 @@ export default function HeroGlobe() {
           y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 },
           opacity: { duration: 0.8, delay: 0.2 },
         }}
-        className="absolute top-[12%] left-[0%] sm:-left-[4%] z-20 bg-[#0c1017]/85 backdrop-blur-xl border border-white/15 rounded-2xl px-5 py-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.55)] flex items-center gap-3.5 min-w-[200px]"
+        className="absolute top-[2%] left-[2%] sm:top-[12%] sm:-left-[4%] z-20 bg-[#0c1017]/90 backdrop-blur-xl border border-white/15 rounded-2xl px-3.5 py-2.5 sm:px-5 sm:py-3.5 shadow-[0_15px_35px_rgba(0,0,0,0.55)] flex items-center gap-2.5 sm:gap-3.5 min-w-[160px] sm:min-w-[200px]"
       >
-        <span className="relative flex h-3 w-3 shrink-0">
+        <span className="relative flex h-2.5 w-2.5 sm:h-3 sm:w-3 shrink-0">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_10px_#22c55e]"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 sm:h-3 sm:w-3 bg-emerald-500 shadow-[0_0_10px_#22c55e]"></span>
         </span>
         <div>
-          <div className="text-[11px] text-gray-400 font-medium">Status:</div>
-          <div className="text-xs sm:text-sm font-bold text-white tracking-wide">
+          <div className="text-[10px] sm:text-[11px] text-gray-400 font-medium">Status:</div>
+          <div className="text-[11px] sm:text-sm font-bold text-white tracking-wide">
             Available for hire
           </div>
         </div>
       </motion.div>
 
-      {/* Card 2: Top-Right Code Editor Card */}
+      {/* Card 2: Top-Right Code Editor Card (Hidden on mobile < 640px to prevent visual clutter/overlap over globe) */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, y: [0, -8, 0] }}
@@ -223,7 +223,7 @@ export default function HeroGlobe() {
           y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
           opacity: { duration: 0.8 },
         }}
-        className="absolute top-[8%] right-[0%] sm:-right-[4%] z-20 w-[240px] sm:w-[270px] bg-[#0c1017]/80 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+        className="hidden sm:block absolute top-[8%] right-[0%] sm:-right-[4%] z-20 w-[240px] sm:w-[270px] bg-[#0c1017]/80 backdrop-blur-xl border border-white/15 rounded-2xl p-4 shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
       >
         <div className="flex items-center gap-1.5 pb-2 mb-3 border-b border-white/10">
           <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />

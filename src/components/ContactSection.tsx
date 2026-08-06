@@ -109,23 +109,23 @@ export default function ContactSection() {
                 href="mailto:mateusleitemazzardoveloso@gmail.com"
                 className="glass-card rounded-2xl p-4 border border-white/10 flex items-center justify-between hover:border-green-500/40 transition-colors group"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-gray-900 border border-white/10 text-gray-300 group-hover:text-green-400">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="p-2.5 rounded-xl bg-gray-900 border border-white/10 text-gray-300 group-hover:text-green-400 shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-white font-medium text-sm">E-mail Profissional</h4>
-                    <p className="text-xs text-gray-400 font-mono">mateusleitemazzardoveloso@gmail.com</p>
+                    <p className="text-xs text-gray-400 font-mono break-all sm:break-normal">mateusleitemazzardoveloso@gmail.com</p>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-green-400" />
+                <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-green-400 shrink-0 ml-2" />
               </a>
             </div>
 
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="lg:col-span-7 glass-card rounded-3xl p-8 border border-white/10 space-y-6">
+          <div className="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-6">
             <h3 className="text-2xl font-bold text-white tracking-tight">
               Envie uma mensagem
             </h3>
@@ -149,7 +149,7 @@ export default function ContactSection() {
                       placeholder="Ex: João Silva"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-green-500/80 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-green-500/80 transition-colors"
                     />
                   </div>
 
@@ -161,7 +161,7 @@ export default function ContactSection() {
                       placeholder="joao@empresa.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-green-500/80 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-green-500/80 transition-colors"
                     />
                   </div>
                 </div>
@@ -171,7 +171,7 @@ export default function ContactSection() {
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white text-sm focus:outline-none focus:border-green-500/80 transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white text-base sm:text-sm focus:outline-none focus:border-green-500/80 transition-colors"
                   >
                     <option value="Website / Landing Page">Website / Landing Page</option>
                     <option value="E-Commerce / Vitrine">E-Commerce / Vitrine de Produtos</option>
@@ -188,13 +188,13 @@ export default function ContactSection() {
                     placeholder="Conte um pouco sobre suas ideias, objetivos ou prazos desejados..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-green-500/80 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-gray-950/80 border border-white/10 text-white placeholder-gray-500 text-base sm:text-sm focus:outline-none focus:border-green-500/80 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="neon-btn-primary w-full justify-center py-3.5 text-base"
+                  className="neon-btn-primary w-full justify-center py-3.5 text-base active:scale-[0.99]"
                 >
                   <span>Enviar Mensagem</span>
                   <Send className="w-4 h-4" />

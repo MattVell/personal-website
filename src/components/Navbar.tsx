@@ -178,10 +178,10 @@ export default function Navbar() {
 
       {/* Mobile Navigation Full-Featured Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed top-20 left-4 right-4 z-50 md:hidden bg-[#0c1017]/95 backdrop-blur-2xl border border-green-500/30 rounded-3xl p-6 space-y-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="fixed top-20 left-4 right-4 z-50 md:hidden bg-[#0c1017]/95 backdrop-blur-2xl border border-green-500/30 rounded-3xl p-5 sm:p-6 space-y-5 shadow-[0_20px_50px_rgba(0,0,0,0.9)] max-h-[calc(100vh-6rem)] overflow-y-auto no-scrollbar animate-in fade-in slide-in-from-top-4 duration-300">
           
           {/* Drawer Header Status */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div className="flex items-center gap-2 text-xs font-mono text-green-400">
               <Sparkles className="w-3.5 h-3.5 animate-pulse text-green-400" />
               <span>Navegação do Portfólio</span>
@@ -192,7 +192,7 @@ export default function Navbar() {
           </div>
 
           {/* Nav Links List */}
-          <div className="space-y-2">
+          <div className="space-y-1.5">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = activeSection === link.id;
@@ -202,10 +202,10 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 ${
+                  className={`flex items-center justify-between px-4 py-3.5 rounded-2xl transition-all duration-200 active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 min-h-[48px] ${
                     isActive
                       ? "bg-green-500/15 border border-green-500/40 text-green-400 font-semibold"
-                      : "text-gray-300 hover:text-white hover:bg-white/5 border border-transparent"
+                      : "text-gray-300 hover:text-white hover:bg-white/5 active:bg-white/10 border border-transparent"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -240,7 +240,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="neon-btn-primary w-full justify-center py-3.5 text-sm font-bold shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
+              className="neon-btn-primary w-full justify-center py-3.5 text-sm font-bold shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400 active:scale-[0.99]"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Falar no WhatsApp Agora</span>

@@ -71,8 +71,8 @@ export default function Hero() {
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#projetos" className="neon-btn-primary group py-3.5 px-8 text-base">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <a href="#projetos" className="neon-btn-primary group py-3.5 px-8 text-base justify-center active:scale-[0.99]">
               <span>Explorar Projetos</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
@@ -81,16 +81,16 @@ export default function Hero() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3.5 rounded-full border border-gray-700/80 hover:border-emerald-500/50 bg-[#0d1117]/80 hover:bg-[#161b22] text-gray-200 hover:text-white font-medium text-base backdrop-blur-md transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.15)] flex items-center gap-2"
+              className="px-7 py-3.5 rounded-full border border-gray-700/80 hover:border-emerald-500/50 bg-[#0d1117]/80 hover:bg-[#161b22] text-gray-200 hover:text-white font-medium text-base backdrop-blur-md transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(34,197,94,0.15)] flex items-center justify-center gap-2 active:scale-[0.99]"
             >
               <span>Falar no WhatsApp</span>
             </a>
           </div>
 
           {/* Key stats banner with concrete proof points */}
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-2xl">
-            <div>
-              <div className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+          <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-white/10 max-w-2xl">
+            <div className="p-3 rounded-2xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
+              <div className="text-base sm:text-xl font-bold text-white flex items-center gap-2">
                 <Zap className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Next.js 15</span>
               </div>
@@ -99,8 +99,8 @@ export default function Hero() {
               </p>
             </div>
 
-            <div>
-              <div className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+            <div className="p-3 rounded-2xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
+              <div className="text-base sm:text-xl font-bold text-white flex items-center gap-2">
                 <Layout className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>UI/UX</span>
               </div>
@@ -109,8 +109,8 @@ export default function Hero() {
               </p>
             </div>
 
-            <div>
-              <div className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+            <div className="p-3 rounded-2xl bg-white/[0.02] sm:bg-transparent border border-white/5 sm:border-none">
+              <div className="text-base sm:text-xl font-bold text-white flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>100<span className="text-emerald-400">%</span></span>
               </div>

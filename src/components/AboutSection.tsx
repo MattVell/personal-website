@@ -107,7 +107,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Card 1: Bio Story & Filosofia (7 Colunas) */}
-          <div className="lg:col-span-7 glass-card p-8 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden group flex flex-col justify-between space-y-8">
+          <div className="lg:col-span-7 glass-card p-6 sm:p-10 rounded-3xl border border-white/10 relative overflow-hidden group flex flex-col justify-between space-y-8">
             <div className="absolute -right-20 -top-20 w-60 h-60 bg-green-500/10 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all duration-500 pointer-events-none" />
 
             <div className="space-y-6 relative z-10">
@@ -130,16 +130,16 @@ export default function AboutSection() {
             </div>
 
             {/* Sub-Badges Rodapé da Bio */}
-            <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 relative z-10">
-              <div className="space-y-1">
+            <div className="pt-6 border-t border-white/10 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-4 relative z-10">
+              <div className="space-y-1 p-2.5 rounded-xl bg-white/[0.02] sm:bg-transparent sm:p-0 border border-white/5 sm:border-none">
                 <p className="text-xs text-gray-400 font-mono">Foco Principal</p>
                 <p className="text-sm font-semibold text-white">Full-Stack & UI</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 p-2.5 rounded-xl bg-white/[0.02] sm:bg-transparent sm:p-0 border border-white/5 sm:border-none">
                 <p className="text-xs text-gray-400 font-mono">Arquitetura</p>
                 <p className="text-sm font-semibold text-white">Clean & Modular</p>
               </div>
-              <div className="space-y-1">
+              <div className="space-y-1 p-2.5 rounded-xl bg-white/[0.02] sm:bg-transparent sm:p-0 border border-white/5 sm:border-none">
                 <p className="text-xs text-gray-400 font-mono">Padrão</p>
                 <p className="text-sm font-semibold text-green-400">High Web Vitals</p>
               </div>
@@ -150,19 +150,19 @@ export default function AboutSection() {
           <div className="lg:col-span-5 glass-card rounded-3xl border border-white/10 overflow-hidden flex flex-col justify-between group shadow-2xl relative">
             
             {/* Header do Terminal */}
-            <div className="bg-slate-950/80 px-5 py-3.5 border-b border-white/10 flex items-center justify-between">
+            <div className="bg-slate-950/80 px-4 sm:px-5 py-3.5 border-b border-white/10 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
-                <span className="ml-2 text-xs font-mono text-gray-400 flex items-center gap-1.5">
-                  <Terminal className="w-3.5 h-3.5 text-green-400" />
+                <span className="ml-2 text-xs font-mono text-gray-400 flex items-center gap-1.5 truncate max-w-[140px] sm:max-w-none">
+                  <Terminal className="w-3.5 h-3.5 text-green-400 shrink-0" />
                   mateus-profile.ts
                 </span>
               </div>
 
               {/* Botões de Aba e Copy */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0">
                 <div className="flex bg-slate-900 rounded-lg p-0.5 border border-white/10 text-[11px] font-mono">
                   <button
                     onClick={() => setActiveCodeTab("ts")}
@@ -193,7 +193,7 @@ export default function AboutSection() {
             </div>
 
             {/* Conteúdo do Código com Destaque de Sintaxe */}
-            <div className="p-6 font-mono text-xs sm:text-sm bg-slate-950/60 overflow-x-auto text-gray-300 leading-relaxed flex-1 flex flex-col justify-center">
+            <div className="p-4 sm:p-6 font-mono text-[11px] sm:text-xs md:text-sm bg-slate-950/60 overflow-x-auto text-gray-300 leading-relaxed flex-1 flex flex-col justify-center">
               <pre className="whitespace-pre">
                 {activeCodeTab === "ts" ? (
                   <>

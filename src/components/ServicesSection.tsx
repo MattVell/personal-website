@@ -140,6 +140,18 @@ export default function ServicesSection() {
     return `https://wa.me/5541992666567?text=${text}`;
   };
 
+  const handleServiceSelect = (id: string) => {
+    setActiveServiceId(id);
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      setTimeout(() => {
+        const el = document.getElementById(`service-panel-${id}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }, 50);
+    }
+  };
+
   return (
     <section id="servicos" className="relative py-28 px-6 sm:px-12 lg:px-20 z-10 bg-slate-950/40 border-y border-zinc-800/60">
       <div className="max-w-6xl mx-auto space-y-16">
@@ -178,8 +190,8 @@ export default function ServicesSection() {
                   aria-selected={isActive}
                   aria-controls={`service-panel-${service.id}`}
                   id={`service-tab-${service.id}`}
-                  onClick={() => setActiveServiceId(service.id)}
-                  className={`w-full text-left p-5 sm:p-6 rounded-2xl border transition-all duration-300 relative group flex items-center justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 ${
+                  onClick={() => handleServiceSelect(service.id)}
+                  className={`w-full text-left p-4 sm:p-6 rounded-2xl border transition-all duration-300 relative group flex items-center justify-between gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:scale-[0.99] ${
                     isActive
                       ? "bg-zinc-900/90 border-emerald-500/60 shadow-lg shadow-emerald-500/5 ring-1 ring-emerald-500/30"
                       : "bg-zinc-900/30 border-zinc-800/80 hover:bg-zinc-900/60 hover:border-zinc-700"
