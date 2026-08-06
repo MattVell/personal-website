@@ -45,7 +45,7 @@ export default function Hero() {
                       {/* Full white reveal rect with vertical padding */}
                       <rect x="0" y="-5" width="300" height="26" fill="white" />
                       {/* Symmetrical smooth circular cutout for 'g' descender centered at X=77 */}
-                      <circle cx="77" cy="1" r="11.8" fill="black" />
+                      <circle cx="78.1" cy="1" r="11.8" fill="black" />
                       {/* Symmetrical smooth circular cutout for 'p' descender centered at X=169.5 */}
                       <circle cx="169.5" cy="1" r="11" fill="black" />
                     </mask>
