@@ -98,7 +98,7 @@ export default function Navbar() {
           >
             <div className="flex items-center gap-1.5">
               <span className="text-lg font-bold tracking-tight text-white group-hover:text-green-400 transition-colors">
-                Mateus<span className="text-green-500 drop-shadow-[0_0_8px_#22c55e]">.</span>Veloso
+                Mateus Veloso
               </span>
             </div>
             <span className="text-[10px] text-gray-400 tracking-widest font-mono uppercase flex items-center gap-1.5 group-hover:text-green-400/90 transition-colors">
